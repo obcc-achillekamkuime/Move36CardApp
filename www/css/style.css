@@ -1,0 +1,41 @@
+/* Empty. Add your own CSS if you like */
+.item .open{
+    width: 100px;
+    background-color: #33cd5f;
+    padding: 2px 4px;
+    min-width: 28px;
+    min-height: 26px;
+    line-height: 26px;
+    transform: rotate(90deg) scale(1) translate(0px);
+    -webkit-transform: rotate(90deg) scale(1) translate(0px);
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    right: 1.5em;
+    bottom: 2.16em;
+}
+
+.open.current{
+    right: 0;
+    transform: rotate(0deg) scale(1) translate(0px);
+    -webkit-transform: rotate(0deg) scale(1) translate(0px);
+    position: relative;
+    bottom: 0;
+}
+
+.item .close{
+    background-color: #e13b3b;
+}
+
+.ion-ios-navigate, .ion-ios-pricetags{
+    font-size: 1.5em;
+}
+
+
+
+.item-favorit > .item-favorited{
+    color: #E91021;
+}
+#shop .item{
+    padding: 16px 12px;
+}

@@ -1,0 +1,40 @@
+<ion-view title="{{ currentShop.breakpoint | uppercase }}">
+  <ion-content id="shop">
+     <ion-list>
+      <ion-item class="item-remove-animate ">
+          <img with="100%" ng-src="img/{{currentShop.name}}">                                          
+      </ion-item>
+      <ion-item class="item-remove-animate">   
+          <div class="row">
+            <div class="col">
+              <h2> Adresse </h2>                      
+              <span>{{currentShop.strasse}},</span><br>
+              <span>{{currentShop.plz}} </span> <span>{{currentShop.stadt}} </span><br>
+              Tel: <span>{{currentShop.Tel}}</span>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col" ng-if="currentShop.oeffnungszeit_tag != ''">
+              <h2>Öffnungszeiten</h2>
+              <span>Mo - Fr {{currentShop.oeffnungszeit_tag}}</span><br>
+              <span ng-if="currentShop.oeffnungszeit_tag2 != ''">
+                Sa {{currentShop.oeffnungszeit_tag2}}
+              </span><br>
+              <span ng-if="currentShop.oeffnungszeit_tag3 != ''">
+                So {{currentShop.oeffnungszeit_tag3}}
+              </span><br>
+              <div class="open current" shop-status time="currentShop">open</div>
+            </div>
+          </div>                
+      </ion-item>
+      <ion-item class="item item-icon-left" href="">
+           <i class="ion-ios-navigate" ></i>
+           Jetzt zu Geschäft navigieren                                       
+      </ion-item>
+      <ion-item class="item item-icon-left" href="">
+           <i class="ion-ios-pricetags" ></i>
+           Aktuelle Angebote                                       
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

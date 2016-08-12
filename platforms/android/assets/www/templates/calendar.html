@@ -1,0 +1,16 @@
+<ion-view view-title="Kalendar">
+    <ion-content>
+        <div class="card" ng-repeat="event in events">
+            <div class="item item-divider">
+                {{event.title}}
+            </div>
+            <div class="item item-text-wrap">
+                <p>
+                    {{ event.description }}
+                    <p/>
+                    <strong>Gultig von {{ event.startdate | date:'mediumDate' }}</strong> 
+                    <strong>- {{ event.enddate | date:'mediumDate' }}</strong>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

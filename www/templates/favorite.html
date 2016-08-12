@@ -1,0 +1,23 @@
+<ion-view view-title="Merkliste">
+  <ion-content>
+    <ion-list>
+      <div  ng-repeat="shop in favorite | filter: { favorited: true}">
+        <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-click="detailView(shop)">
+          <img ng-src="img/{{shop.name}}">
+          <h2>{{ shop.breakpoint | uppercase }}</h2>                                
+          <span>{{shop.strasse}},</span><br>
+          <span>{{shop.plz}} </span> <span>{{shop.stadt}} </span> 
+          <div class="open" shop-status time="shop">open</div>             
+          <!--<i class="icon ion-android-star-outline"></i>-->
+
+          <div ng-if="shop.favorited" class="item-favorit" ng-click="removeFavorit(shop); $event.stopPropagation();">
+            <i class="icon ion-android-star item-favorited" ></i>
+          </div>
+          <div ng-if="!shop.favorited" class="item-favorit" ng-click="addToFavorit(shop); $event.stopPropagation();">
+            <i class="icon ion-android-star-outline"></i>
+          </div>  
+        </ion-item>      
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view view-title="Verlauf">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <div class="buttons">
+        <button class="button icon-left ion-ios-trash-outline" ng-click="deleteHistories()">Löschen</button>
+      </div>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="shop in histories track by $index" ng-click="detailView(shop)">
+          <img ng-src="img/{{shop.name}}">
+          <h2>{{ shop.breakpoint | uppercase }}</h2>                                
+          <span>{{shop.strasse}},</span><br>
+          <span>{{shop.plz}} </span> <span>{{shop.stadt}} </span> 
+          <div class="open" shop-status time="shop">open</div>             
+          <!--<i class="icon ion-android-star-outline"></i>-->
+
+          <div ng-if="shop.favorited" class="item-favorit" ng-click="removeFavorit(shop); $event.stopPropagation();">
+            <i class="icon ion-android-star item-favorited" ></i>
+          </div>
+          <div ng-if="!shop.favorited" class="item-favorit" ng-click="addToFavorit(shop); $event.stopPropagation();">
+            <i class="icon ion-android-star-outline"></i>
+          </div>  
+          <!--<ion-option-button class="button-info ion-ios-trash bar-assertive"
+                       ng-click="deleteItem(item, $index)">
+                       Löschen
+          </ion-option-button>-->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

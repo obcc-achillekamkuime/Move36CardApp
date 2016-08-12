@@ -1,0 +1,24 @@
+<ion-view view-title="Geschäfte">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="shop in Shops" ng-click="detailView(shop)">
+                <img ng-src="img/{{shop.name}}">
+                <h2>{{ shop.breakpoint | uppercase }}</h2>                                
+                <span>{{shop.strasse}},</span><br>
+                <span>{{shop.plz}} </span> <span>{{shop.stadt}} </span> 
+                <div class="open" shop-status time="shop">open</div>             
+                <!--<i class="icon ion-android-star-outline"></i>-->
+
+                <div ng-if="shop.favorited" class="item-favorit" ng-click="removeFavorit(shop); $event.stopPropagation();">
+                  <i class="icon ion-android-star item-favorited" ></i>
+                </div>
+                <div ng-if="!shop.favorited" class="item-favorit" ng-click="addToFavorit(shop); $event.stopPropagation();">
+                  <i class="icon ion-android-star-outline"></i>
+                </div>  
+                <ion-option-button class="button-assertive " ng-click="remove(chat) ">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="Kalendar">
+    <ion-content>
+        <div class="card" ng-repeat="event in events">
+            <div class="item item-divider" ng-style="{color: event.color}">
+                {{event.title}}
+            </div>
+            <div class="item item-text-wrap">
+                <p>
+                    {{ event.description }}
+                    <p/>
+                    <strong>Gultig von {{ event.startdate | date:'mediumDate' }}</strong>
+                    <strong>- {{ event.enddate | date:'mediumDate' }}</strong>
+
+                    <p ng-if="event.status">Dieses Angebot wurde schon zu Ihrem Kalendar hinzugefügt</p>
+                    <button ng-if="!event.status" ng-click="addOfferEvent(event,$index)" class="button button-block button-balanced">
+                        Zu Kalendar hinzufügen
+                    </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
