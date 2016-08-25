@@ -3,14 +3,17 @@
 app.factory('Scopes', function($rootScope) {
         var mem = {};
 
-        /**/
+        /*Speichere ein Controller*/
         function store(key, value) {
             $rootScope.$emit('scope.stored', key);
             mem[key] = value;
+            // $rootScope.each(function(index, el) {
+            //
+            // });
             console.log(key)
         }
 
-        /**/
+        /*Gibt den Controller Name zurück */
         function get(key) {
             return mem[key];
         }
